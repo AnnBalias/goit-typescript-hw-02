@@ -1,0 +1,19 @@
+.galleryList {
+    width: 1440px;
+    padding: 12px 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.galleryitem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc((90% - 16px) / 3);
+    height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+                0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
