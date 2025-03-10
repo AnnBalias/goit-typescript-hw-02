@@ -1,5 +1,6 @@
 import Modal from 'react-modal';
 import css from "./ImageModal.module.css"
+import { Img } from '../../App.types';
 
 Modal.setAppElement('#root');
 
@@ -9,7 +10,13 @@ const customStyles = {
   }
 };
 
-const ImageModal = ({modalOpn, handClose, selectImg }) => {
+interface ImageModalProps {
+    modalOpn : boolean;
+    handClose : () => void;
+    selectImg : Img | null;
+}
+
+const ImageModal = ({ modalOpn, handClose, selectImg } : ImageModalProps) => {
    
     return (
         <Modal

@@ -10,15 +10,16 @@ import ImageModal from './components/ImageModal/ImageModal';
 import { fetchImages } from "./services/unsplash.js"
 // import styles
 import './App.css'
+import { Img } from './App.types';
 
 const App = () => {
-  const [error, setError] = useState(false);
-  const [load, setLoad] = useState(false);
-  const [imgs, setImgs] = useState([]);
-  const [selectImg, setSelectImg] = useState(null);
-  const [search, setSearch] = useState("");
-  const [page, setPage] = useState(1);
-  const [modalOpn, setModalOpn] = useState(false);
+  const [error, setError] = useState<boolean>(false);
+  const [load, setLoad] = useState<boolean>(false);
+  const [imgs, setImgs] = useState<Img[]>([]);
+  const [selectImg, setSelectImg] = useState<Img | null>(null);
+  const [search, setSearch] = useState<string>("");
+  const [page, setPage] = useState<number>(1);
+  const [modalOpn, setModalOpn] = useState<boolean>(false);
 
   
 
@@ -47,13 +48,13 @@ const App = () => {
     getImgs();
   }, [search, page]);
 
-  const handSub = (searchInp) => {
+  const handSub = (searchInp : string) => {
     setSearch(searchInp);
     setPage(1);
     setImgs([]);
   };
 
-  const handModal = (img) => {
+  const handModal = (img : Img) => {
     setSelectImg(img)
     setModalOpn(true)
   };

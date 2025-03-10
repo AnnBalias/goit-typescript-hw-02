@@ -2,13 +2,19 @@ import { IconContext } from 'react-icons';
 import { IoIosSearch } from "react-icons/io";
 import { toast } from "react-hot-toast";
 import css from "./SearchBar.module.css";
+import { FormEvent } from 'react';
 
-const SearchBar = ({ handSub }) => {
+interface SearchBarProps {
+    handSub : (searchInp: string) => void;
+}
 
-    const onSub = (e) => {
+
+const SearchBar = ({ handSub } : SearchBarProps) => {
+
+    const onSub = (e : FormEvent) => {
         e.preventDefault();
-        const form = e.target;
-        const search = form.elements.search.value.trim();
+        const form = e.target as HTMLFormElement;
+        const search = (form.elements.namedItem("search") as HTMLInputElement).value.trim();
         if (search === "") {
             toast.error("Input field is empty!");
             return;

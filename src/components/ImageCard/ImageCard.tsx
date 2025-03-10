@@ -1,6 +1,11 @@
-import css from "./ImageCard.module.css"
+import { Img } from "../../App.types";
+import css from "./ImageCard.module.css";
 
-const ImageCard = ({img}) => {
+interface ImageCardProps {
+    img: Img;
+}
+
+const ImageCard = ({img} : ImageCardProps) => {
     return (
         <div className={css.imgBox}>
             <img

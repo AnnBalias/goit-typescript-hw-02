@@ -8,7 +8,7 @@ const Loader = () => {
                 visible={true}
                 height="50"
                 width="50"
-                color="grey"
+                color="#808080"
                 strokeColor="dimgray"
                 strokeWidth="5"
                 animationDuration="0.75"
@@ -21,3 +21,5 @@ const Loader = () => {
 }
 
 export default Loader;
+
+// не розумію, як прибрати помилку
