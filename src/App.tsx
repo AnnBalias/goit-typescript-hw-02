@@ -73,7 +73,7 @@ const App = () => {
       <SearchBar handSub={handSub} />
       {error ? <ErrorMessage /> : <ImageGallery imgs={imgs} handModal={handModal} />}
       {imgs.length > 0 && !error && <LoadMoreBtn loadMore={loadMore} />}
-      {load && <Loader />}
+      {true && <Loader />}
       <Toaster />
       <ImageModal modalOpn={modalOpn} handClose={closeModal} selectImg={selectImg} />
     </>
