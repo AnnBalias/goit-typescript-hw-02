@@ -5,4 +5,8 @@ export type Img = {
         small: string;
         regular: string;
     }
-}
+};
+
+export type ApiResponse = {
+    results: Img[];
+};

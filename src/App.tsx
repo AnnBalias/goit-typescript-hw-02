@@ -10,7 +10,7 @@ import ImageModal from './components/ImageModal/ImageModal';
 import { fetchImages } from "./services/unsplash.js"
 // import styles
 import './App.css'
-import { Img } from './App.types';
+import { ApiResponse, Img } from './App.types';
 
 const App = () => {
   const [error, setError] = useState<boolean>(false);
@@ -30,10 +30,8 @@ const App = () => {
       try {
         setLoad(true);
         setError(false);
-        const results = await fetchImages(search, page);
-        setImgs((prevImgs) =>
-          page === 1 ? results : [...prevImgs, ...results]
-        )
+        const { results }: ApiResponse = await fetchImages(search, page);
+        setImgs((prev: Img[]) => [...prev, ...results])
                 
         if (results.length === 0) {
           toast.error("No results, sorry");
